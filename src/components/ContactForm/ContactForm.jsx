@@ -9,21 +9,20 @@ import {
 } from './ContactForm.styled';
 
 const ContactForm = () => {
+  // Create a Redux dispatcher
   const dispatch = useDispatch();
-
   // Method that adds a contact when the form is submitted
   const handleSubmitForm = event => {
     event.preventDefault();
-
     const form = event.currentTarget;
-
+    // Create data from form
     const dataByForm = {
       name: form.name.value,
       number: form.number.value,
     };
-
+    // Dispatch the addContacts action with form data
     dispatch(addContacts(dataByForm));
-
+    // Reset form
     form.reset();
   };
 

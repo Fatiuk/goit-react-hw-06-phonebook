@@ -1,0 +1,25 @@
+import { useSelector } from 'react-redux';
+import { getContacts } from 'redux/contacts/selectors';
+import {
+  ContactListWrap,
+  PhonebookList,
+  PhonebookItem,
+} from './ContactsList.styled';
+import ContactsItem from 'components/ContactsItem/ContactsItem';
+
+const ContactList = () => {
+  const contacts = useSelector(getContacts);
+  return (
+    <ContactListWrap>
+      <PhonebookList>
+        {contacts.map(contact => (
+          <PhonebookItem key={contact.id}>
+            <ContactsItem contact={contact}></ContactsItem>
+          </PhonebookItem>
+        ))}
+      </PhonebookList>
+    </ContactListWrap>
+  );
+};
+
+export default ContactList;

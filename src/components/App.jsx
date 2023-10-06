@@ -6,7 +6,7 @@ import ContactForm from './ContactForm/ContactForm';
 // ============ ContactList ============
 import Filter from './Filter/Filter';
 // ============ ContactList ============
-import ContactList from './ContatctList/ContactList';
+import ContactList from './ContatctsList/ContactsList';
 
 const initialContacts = [
   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
