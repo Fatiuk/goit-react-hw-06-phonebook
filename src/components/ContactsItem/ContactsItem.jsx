@@ -1,15 +1,23 @@
+import { useDispatch } from 'react-redux';
+import { deleteContact } from 'redux/contacts/actions';
 import {
   ContactSpan,
   ContactLink,
   ContactDeleteBtn,
 } from './ContactsItem.styled';
 
-function ContactsItem({ contact: { name, number } }) {
+function ContactsItem({ contact: { name, number, id } }) {
+  const dispatch = useDispatch();
+
+  const handleDelete = () => dispatch(deleteContact(id));
+
   return (
     <>
-      <ContactSpan>{name}</ContactSpan>:{' '}
+      <ContactSpan>{name}</ContactSpan>
       <ContactLink href={`tel:${number}`}>{number}</ContactLink>
-      <ContactDeleteBtn type="button">Delete</ContactDeleteBtn>
+      <ContactDeleteBtn type="button" onClick={handleDelete}>
+        Delete
+      </ContactDeleteBtn>
     </>
   );
 }

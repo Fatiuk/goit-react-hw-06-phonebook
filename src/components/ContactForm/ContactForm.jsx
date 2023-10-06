@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addContacts } from 'redux/contacts/actions';
+import { addContact } from 'redux/contacts/actions';
 import {
   FormWrap,
   InputContainer,
@@ -21,7 +21,7 @@ const ContactForm = () => {
       number: form.number.value,
     };
     // Dispatch the addContacts action with form data
-    dispatch(addContacts(dataByForm));
+    dispatch(addContact(dataByForm));
     // Reset form
     form.reset();
   };
