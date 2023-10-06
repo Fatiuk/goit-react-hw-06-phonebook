@@ -8,19 +8,6 @@ import Filter from './Filter/Filter';
 import ContactList from './ContatctsList/ContactsList';
 
 const App = () => {
-  // const [filter, setFilter] = useState('');
-
-  // // The method that updates the value of the filter
-  // const changeFilter = event => {
-  //   setFilter(event.target.value);
-  // };
-  // // The method that returns the filtered list of contacts
-  // const filteredContacts = () => {
-  //   return contacts.filter(contact =>
-  //     contact.name.toLowerCase().includes(filter.toLowerCase().trim())
-  //   );
-  // };
-
   return (
     <Section title="📚 Phonebook 📞">
       <ContactForm></ContactForm>

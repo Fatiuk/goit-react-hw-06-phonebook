@@ -1,13 +1,21 @@
+import { setQueryFilter } from 'redux/filter/actions';
 import { FilterInput } from './Filter.styled';
+import { useDispatch } from 'react-redux';
 
-function Filter({ filter, onChange }) {
+function Filter() {
+  const dispatch = useDispatch();
+
+  const handleInputChange = event => {
+    const newValue = event.target.value;
+    dispatch(setQueryFilter(newValue));
+  };
+
   return (
     <FilterInput
       type="text"
       name="filter"
       placeholder="Search by name"
-      value={filter}
-      onChange={onChange}
+      onChange={handleInputChange}
     />
   );
 }
