@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+import { getContacts } from 'redux/contacts/selectors';
 import {
   ContactListWrap,
   PhonebookList,
@@ -7,7 +9,8 @@ import {
   ContactDeleteBtn,
 } from './ContactList.styled';
 
-const ContactList = ({ contacts, handleDeleteContact }) => {
+const ContactList = ({ handleDeleteContact }) => {
+  const contacts = useSelector(getContacts);
   return (
     <ContactListWrap>
       <PhonebookList>

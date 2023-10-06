@@ -7,17 +7,11 @@ export const FormWrap = styled.form`
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  position: relative;
   margin-bottom: 20px;
 `;
 export const ContactLabel = styled.label`
-  position: absolute;
-  top: ${({ $hasValue }) => ($hasValue ? '-15px' : '10px')};
-  left: ${({ $hasValue }) => ($hasValue ? '6px' : '10px')};
-  pointer-events: none;
-  transition: 0.2s ease all;
-  color: ${({ $hasValue }) => ($hasValue ? '#555' : '#999')};
-  font-size: ${({ $hasValue }) => ($hasValue ? '12px' : '16px')};
+  color: #555;
+  font-size: 16px;
 `;
 export const ContactInput = styled.input`
   padding: 10px;
