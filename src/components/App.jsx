@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Notiflix from 'notiflix';
 // ============ Section ============
 import Section from './Section/Section';
 // ============ ContactForm ============
@@ -27,20 +26,6 @@ const App = () => {
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-  // The method that adds a new contact to the list of contacts
-  const addContact = newContact => {
-    // Check if a contact with the same name already exists
-    const isExist = contacts.find(el => el.name === newContact.name);
-    // If the contact already exists, display a warning
-    if (isExist)
-      return Notiflix.Report.warning(
-        'Alert',
-        `Contact with name this name already exists!`,
-        'Okay'
-      );
-    // If the contact doesn't exist, add it to the list of contacts
-    setContacts(prevContacts => [...prevContacts, newContact]);
-  };
   // The method that deletes the contact by its ID
   const deleteContact = contactId => {
     setContacts(prevContacts =>
@@ -60,7 +45,7 @@ const App = () => {
 
   return (
     <Section title="📚 Phonebook 📞">
-      <ContactForm onSubmit={addContact}></ContactForm>
+      <ContactForm></ContactForm>
       <h2>Contacts</h2>
       <Filter filter={filter} onChange={changeFilter}></Filter>
       <ContactList

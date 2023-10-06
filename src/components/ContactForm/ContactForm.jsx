@@ -8,7 +8,7 @@ import {
   AddContactButton,
 } from './ContactForm.styled';
 
-const ContactForm = ({ onSubmit }) => {
+const ContactForm = () => {
   const dispatch = useDispatch();
 
   // Method that adds a contact when the form is submitted

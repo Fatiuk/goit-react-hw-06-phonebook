@@ -11,9 +11,18 @@ const contactsInitialState = {
 export const rootReducer = (state = contactsInitialState, action) => {
   switch (action.type) {
     case 'contacts/addContact':
+      const isExist = state.contacts.some(
+        contact => contact.name === action.payload.name
+      );
+      if (isExist) {
+        return state;
+      }
       return { ...state, contacts: [...state.contacts, action.payload] };
     case 'contacts/deleteContact':
-      return state.filter(task => task.id !== action.payload);
+      return {
+        ...state,
+        contacts: [state.filter(contact => contact.id !== action.payload)],
+      };
     default:
       return state;
   }
