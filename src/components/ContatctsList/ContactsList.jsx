@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
-import { getContacts } from 'redux/contacts/selectors';
-import { getFilter } from 'redux/filter/selectors';
+import { getContacts, getFilter } from 'redux/selectors';
 import {
   ContactListWrap,
   PhonebookList,
@@ -11,7 +10,6 @@ import ContactsItem from 'components/ContactsItem/ContactsItem';
 const ContactList = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
-  console.log(filter);
 
   const filteredContacts = filter
     ? contacts.filter(contact =>

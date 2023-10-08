@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/contacts/actions';
+import { addContact } from 'redux/contactsSlice';
 import {
   FormWrap,
   InputContainer,
