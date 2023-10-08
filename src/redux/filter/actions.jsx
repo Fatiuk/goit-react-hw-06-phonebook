@@ -1,6 +1,3 @@
-export const setQueryFilter = value => {
-  return {
-    type: 'filter/setQueryFilter',
-    payload: value,
-  };
-};
+import { createAction } from '@reduxjs/toolkit';
+
+export const setQueryFilter = createAction('filter/setQueryFilter');
