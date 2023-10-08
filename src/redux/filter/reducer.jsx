@@ -1,13 +1,9 @@
-const { filterInitialState } = require('redux/filter/initialState');
+import { setQueryFilter } from './actions';
+import { filterInitialState } from './initialState';
+import { createReducer } from '@reduxjs/toolkit';
 
-export const filtersReducer = (state = filterInitialState.filter, action) => {
-  switch (action.type) {
-    case 'filter/setQueryFilter':
-      return {
-        ...state,
-        status: action.payload,
-      };
-    default:
-      return state;
-  }
-};
+export const filtersReducer = createReducer(filterInitialState.filter, {
+  [setQueryFilter]: (state, action) => {
+    return action.payload;
+  },
+});

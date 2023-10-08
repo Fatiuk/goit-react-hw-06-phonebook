@@ -11,10 +11,11 @@ import ContactsItem from 'components/ContactsItem/ContactsItem';
 const ContactList = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
+  console.log(filter);
 
   const filteredContacts = filter
     ? contacts.filter(contact =>
-        contact.name.toLowerCase().includes(filter.status.toLowerCase())
+        contact.name.toLowerCase().includes(filter.toLowerCase())
       )
     : contacts;
 
