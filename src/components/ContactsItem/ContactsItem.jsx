@@ -6,8 +6,10 @@ import {
   ContactDeleteBtn,
 } from './ContactsItem.styled';
 
-function ContactsItem({ contact: { name, number, id } }) {
+function ContactsItem({ contact, contact: { name, number, id } }) {
   const dispatch = useDispatch();
+
+  console.log(contact);
 
   const handleDelete = () => dispatch(deleteContact(id));
 

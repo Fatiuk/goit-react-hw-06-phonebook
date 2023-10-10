@@ -7,6 +7,7 @@ import {
   ContactInput,
   AddContactButton,
 } from './ContactForm.styled';
+import { nanoid } from 'nanoid';
 
 const ContactForm = () => {
   // Create a Redux dispatcher
@@ -17,6 +18,7 @@ const ContactForm = () => {
     const form = event.currentTarget;
     // Create data from form
     const dataByForm = {
+      id: nanoid(),
       name: form.name.value,
       number: form.number.value,
     };
