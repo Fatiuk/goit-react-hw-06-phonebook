@@ -8,9 +8,6 @@ import {
 
 function ContactsItem({ contact, contact: { name, number, id } }) {
   const dispatch = useDispatch();
-
-  console.log(contact);
-
   const handleDelete = () => dispatch(deleteContact(id));
 
   return (
